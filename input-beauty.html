@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input-beauty</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      font-size:14px
+    }
+    form{
+      min-width: 600px;
+    }
+    #yourname{
+      display:inline-block;
+      vertical-align: middle;
+      margin-top:-2.5px;
+    }
+    input{
+      display:inline-block;
+      vertical-align:middle;
+    }
+    form{
+      background-color: rgba(0,0,0,0.5);
+    }
+    /*
+     *抄袭版本(input的边框设置为rgba(0,0,0,0),透明，很巧妙)  
+     * {
+        margin: 0;
+        padding: 0;
+      }
+      div{
+        display: inline-block;
+        background-color: rgba(0,0,0,0.1);
+        vertical-align: middle;
+        font-size: 0;
+        margin: 5px;
+        border-radius: 3px;
+        border: 1px solid rgb(200,200,200);
+      }
+      div *{
+        font-size: 16px;
+        vertical-align: inherit;
+      }
+      span{
+        padding:0 7px;
+        border: 1px solid rgb(200,200,200);
+      }
+      input{
+        display: inline-block;
+      }
+      input[type="checkbox"]{
+        margin: 7px;
+
+      }
+      input[type="text"]{
+        width: 100px;
+        height: 25px;
+        border: 5px solid rgba(0,0,0,0);
+      }
+     */
+  </style>
+</head>
+<body>
+  <form action="">
+    <label for="yourname">姓名</label>
+    <input type="text" name="" id="yourname" placeholder="姓名">
+    <label for="male">男x</label>
+    <input type="checkbox" name="sex" value="" id="male">
+    <label for="fomale">女x</label>
+    <input type="checkbox" name="sex" value="" id="fomale">
+  </form>
+  <!-- 
+    <div>
+      <input type="checkbox" name="">
+      <span>我ABCD</span>
+      <input type="text" placeholder="我ABCD" autofocus>
+    </div>
+   -->
+</body>
+</html>
