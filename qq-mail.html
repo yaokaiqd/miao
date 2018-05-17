@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>qq-mail</title>
   <style>
-  *{
+  /*
+   *第一版绝对定位版
+    *{
     margin:0;
     padding:0;
-  }
+    }
     header{
       border:2px solid #3c6eab;
       height:100px;
@@ -21,21 +23,61 @@
       top:102px;
       bottom:0;
     }
-    header div{
-      /*border-top:30px solid red;
-      border-left:30px solid blue;
-      border-bottom:30px solid yellow;
-      border-right:30px solid green;
-      width:0px;*/
-
+    html,body{
+      height:100%;
+    }
+  */
+    /*
+     * 第二版块级元素定位
+    header{
+      border-bottom:2px solid #3c6eab;
+      height:100px;
+    }
+    aside{
+      width:200px;
+      height:calc(100% - 100px);
+      border-right:2px solid #3c6eab;
+    }
+    main{
+      margin-left:200px;
+      height:calc(-100vh + 100px);
+    }
+    */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      height:100%;
+    }
+    .header{
+      display:inline-block;
+      width:100%;
+      height:100px;
+      background-color:pink;
+    }
+    .aside{
+      display:inline-block;
+      width:222px;
+      background-color: purple;
+      height:calc(100% - 100px); /*疑问：为何需要这样设置，不然会出现滚动条*/
+    }
+    .main{
+      display:inline-block;
+      background-color: blue;
+      width:calc(100% - 222px);
+      height:calc(100% - 100px); /*疑问：为何需要这样设置，不然会出现滚动条*/
     }
   </style>
 </head>
 <body>
-  <header>
-    <div></div>
-  </header>
+  <!-- 
+  <header></header>
   <aside></aside>
+  <main></main> 
+  -->
+  <span class="header">头部</span>
+  <span class="aside">侧边</span><span class="main">主体</span>
 </body>
 </html>
 <!-- 1 如何竖向撑开块级元素  暂时使用绝对定位-->
+<!-- 已解决，不使用绝对定位，任何时候绝对定位都是最后考虑，因为不是流动布局，不够灵活。方法如上，值得注意的是vh的使用以及calc需要在符号两边加空格-->
