@@ -1,0 +1,59 @@
+<script>
+  var a=Number(prompt("please input a"));
+  var b=Number(prompt("please input b"));
+  var c=Number(prompt("please input c"));
+  if(isNaN(a)||isNaN(b)||isNaN(c)){
+    alert("请输入纯数字");
+    var a=Number(prompt("please input a"));
+    var b=Number(prompt("please input b"));
+    var c=Number(prompt("please input c"));
+  }
+  var d=b*b - 4*a*c;
+  var x1=0,x2=0;
+  if(d>0){
+    x1= (-b + Math.sqrt(d)) / 2 * a;
+    x2= (-b - Math.sqrt(d)) / 2 * a;
+    console.log("a"+"="+a,"b"+"="+b,"c"+"="+c,"x1"+"="+x1,"x2"+"="+x2);
+  }else if(d<0){
+    console.log(d,"a" + "=" + a,"b" + "=" + b,"c" + "=" + c,
+                  "x1" + "=" + (-b/(2*a)) + "+" + Math.sqrt(-d)/ (2 * a)  +"i",
+                  "x2"+"="+ (-b/(2*a))+ "-" + Math.sqrt(-d)/(2*a) + "i");
+    // x1= -b / 2 * a;
+    // x2=x1;
+    // console.log("a"+"="+a,"b"+"="+b,"c"+"="+c,"x1"+"="+"x2"+"="+x1);
+  }else{
+    x1= -b / 2 * a;
+    x2=x1;
+    console.log("a"+"="+a,"b"+"="+b,"c"+"="+c,"x1"+"="+"x2"+"="+x1);
+    // console.log(d,"a" + "=" + a,"b" + "=" + b,"c" + "=" + c,
+    //               "x1" + "=" + (-b/(2*a)) + "+" + Math.sqrt(-d)/ (2 * a)  +"i",
+    //               "x2"+"="+ (-b/(2*a))+ "-" + Math.sqrt(-d)/(2*a) + "i");
+  }
+  // ----------------------------------------------------------------------------------
+  var a1=Number(prompt("please input a1"));
+  var b1=Number(prompt("please input b1"));
+  var c1=Number(prompt("please input c1"));
+  var a2=Number(prompt("please input a2"));
+  var b2=Number(prompt("please input b2"));
+  var c2=Number(prompt("please input c2"));
+  if(isNaN(a1)||isNaN(b1)||isNaN(c1)||isNaN(a2)||isNaN(b2)||isNaN(c2)){
+    alert("请输入纯数字");
+    var a1=Number(prompt("please input a1"));
+    var b1=Number(prompt("please input b1"));
+    var c1=Number(prompt("please input c1"));
+    var a2=Number(prompt("please input a2"));
+    var b2=Number(prompt("please input b2"));
+    var c2=Number(prompt("please input c2"));
+  }
+  var x=b1*a2-b2*a1;
+  var y=c1*a2-c2*a1;
+  if(x=0){
+    if(y=0){
+      console.log("无数解");
+    }else{
+      console.log("无解"); 
+    }
+  }else{
+    console.log("唯一解");
+  }
+</script>
