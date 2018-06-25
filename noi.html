@@ -110,7 +110,7 @@
 </script>
 <script id="ch0104/11">
   var a = +prompt('请输入星期几');
-  if (a > 0 && a < 7 && a != 1 && a != 3 && a != 5 %% a != 0) {
+  if (a > 0 && a < 7 && a != 1 && a != 3 && a != 5 && a != 0) {
     console.log('YES');
   } else {
     console.log('NO');
@@ -131,7 +131,7 @@
 <script id="ch0104/13">
   var x = +prompt('请输入x的值');
   var y;
-  if (x >= 0 && x < 10) {
+  if (x >= 0 && x < 5) {
     y = -x + 2.5;
   } else if (x >= 5 && x < 10) {
     y = 2 - 1.5 * (x - 3) ** 2
@@ -144,14 +144,14 @@
   var x = +prompt('请输入重量');
   var a = prompt('请输入是否加急');
   if (x <= 1000) {
-    if (a == y) {
+    if (a == 'y') {
       console.log(13);
     }else {
       console.log(8);
     }
   } else {
     var b = Math.ceil((x - 1000) / 500);
-    if (a == y) {
+    if (a == 'y') {
       console.log(13 + 4 * b);
     }else {
       console.log(8 + 4 * b);
@@ -164,7 +164,15 @@
   var c = +prompt('请输第三个数字');
   if (a > b) {
     if (a > c) {
-      
+      console.log(a);
+    } else if (a < c) {
+      console.log(c);
+    }
+  } else if (a < b) {
+    if (b > c) {
+      console.log(b);
+    } else if (b < c) {
+      console.log(c);
     }
   }
 </script>
