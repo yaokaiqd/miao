@@ -1,5 +1,5 @@
 var yaokaiqd = {
-  chunk: function(array,size) {
-    return array + size
+  chunk: function(array,num) {
+    return array + num
   }
 }
