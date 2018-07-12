@@ -64,9 +64,17 @@
   }
   for (var i = 200;i < 250;i++) {
     for (var j = 200;j < 250;j++) {
-      dot(j,i,'red');
+      var a = (250 - i) / 50 * 255; 
+      var b = (250 - j) / 50 * 255;
+      dot(j,i,'rgb(255,'+a+','+b+')');
     }
   }
-  //待解决：色彩空间，圆的替换方法
+  for (var i = 0;i < 6.28;i += 0.01) {
+    dot(50*Math.cos(i) + 200,50*Math.sin(i) + 150);
+  }
+  for (var i = 0;i < 400;i++) {
+    dot(i,10*Math.sin(i / 10) + 150);
+  }
+  //待解决：色彩空间(解决)，圆的替换方法(解决)
 </script>
 </html>

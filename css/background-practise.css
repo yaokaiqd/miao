@@ -86,7 +86,7 @@ footer{
   /*margin-top:80px; */ /*疑问：此处为什么footer的背景下移 ,因为margin溢出*/ 
   border:3px solid #963;
   background-image: url(../images/glassy-gray.jpg);
-  background-position:-1px 0px;
+  xbackground-position:-1px 0px;
   background-repeat: no-repeat;
   background-attachment: fixed;  
 }

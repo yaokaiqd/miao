@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css-cube</title>
+  <style>
+    body{
+      perspective:1000px;
+      perspective-origin: 50% 50%;
+      padding:200px;
+    }
+    main{
+      width:500px;
+      height:500px;
+      margin:auto;
+      position:relative;
+    }
+    div{
+      width:200px;
+      height:200px;
+      border:1px solid;
+      position:absolute;
+    }
+    .top{
+      transform: rotateX(90deg) translateZ(99px);
+      background-color: red;
+    }
+    .left{
+      transform:rotateY(90deg) translateZ(-99px);
+    }
+    .right{
+      transform:rotateY(90deg) translateZ(99px);
+    }
+    .back{
+      transform:translateZ(-99px);
+    }
+    .front{
+      transform:translateZ(99px);
+    }
+    .bottom{
+      transform:rotateX(90deg) translateZ(-99px);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+  </main>
+</body>
+</html>

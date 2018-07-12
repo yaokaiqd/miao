@@ -1,0 +1,108 @@
+
+main{
+  width:960px;
+  height:540px;
+  margin:auto;
+  margin-top:calc(50vh - 270px);
+  box-shadow:0 0 2px 2px black;
+  input{
+    display:none;
+    &:checked +section label{
+      background-color:white;
+      color:#4FA2C4;
+      box-shadow:0 0 0px 6px rgba(79,162,196,0.3);
+      // box-shadow:0 0 0px 6px rgba(79,162,196,1);
+    }
+  }
+  section{
+    position:relative;
+    float:left;
+    width:240px;
+    height:100%;
+    text-align:center;
+    div{
+      position:absolute;
+      width:240px;
+      height:100%;
+      z-index:-100;
+      top:0;
+      overflow:hidden;
+    }
+    div.slider1-1{
+      background-image:url(../images/slider1_01.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider2-1{
+      background-image:url(../images/slider1_02.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider3-1{
+      background-image:url(../images/slider1_03.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider4-1{
+      background-image:url(../images/slider1_04.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider1-2{
+      background-image:url(../images/slider2_01.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider2-2{
+      background-image:url(../images/slider2_02.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider3-2{
+      background-image:url(../images/slider2_03.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider4-2{
+      background-image:url(../images/slider2_04.jpg);
+      background-repeat: no-repeat;
+    }    
+    div.slider1-3{
+      background-image:url(../images/slider3_01.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider2-3{
+      background-image:url(../images/slider3_02.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider3-3{
+      background-image:url(../images/slider3_03.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider4-3{
+      background-image:url(../images/slider3_04.jpg);
+      background-repeat: no-repeat;
+    }    
+    div.slider1-4{
+      background-image:url(../images/slider4_01.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider2-4{
+      background-image:url(../images/slider4_02.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider3-4{
+      background-image:url(../images/slider4_03.jpg);
+      background-repeat: no-repeat;
+    }
+    div.slider4-4{
+      background-image:url(../images/slider4_04.jpg);
+      background-repeat: no-repeat;
+    }
+    label{
+      box-shadow:0 0 0px 6px rgba(0,0,0,0.3);
+      font-size:25px;
+      text-align:center;
+      line-height:50px;
+      display:inline-block;
+      width:50px;
+      height:50px;
+      border-radius:50px;
+      color:white;
+      background-color:#4FA2C4;
+    }  
+  }
+}

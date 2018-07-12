@@ -1,4 +1,4 @@
-<script id="ch0103/01">
+<!-- <script id="ch0103/01">
   var a = +prompt('请输入一个数');
   var b = +prompt('请输入第二个数');
   console.log(a + b);
@@ -138,7 +138,7 @@
   } else if (x >= 10 && x < 20) {
     y = x / 2 - 1.5;
   }
-  console.log(y);
+  console.log(y.toFixed(3));
 </script>
 <script id="ch0104/14">
   var x = +prompt('请输入重量');
@@ -190,4 +190,392 @@
 </script>
 <script id="ch0104/20">
   
+</script> -->
+<script id="sort" sample-input="4 1 7" sample-output="1 4 7" comment="输入三个数，把此三个数按升序输出">
+  
 </script>
+<script id="narcissistic " sample-input="153" sample-output="YES" comment="判断一个数是否为水仙花数">
+  // var a = prompt('请输入一个数');
+  // var b = a.length;
+  // var x = 0;
+  // for (var i = 0;i <= b;i++) {
+    // x += Number(a.charAt(i))**b;
+  // }
+  // if (a == x) {
+    // console.log('YES');
+  // }
+  function digitWidth(x) {
+    var w = 0
+    var d = 0
+    
+    do {
+      d = x % 10
+      w++
+      x = (x - d) / 10
+    } while (x > 0)
+    
+    return w
+  }
+
+  function power(x,y) {
+    var acc = 1
+
+    for (var i = 1;i <= y;i++) {
+      acc *= x
+    }
+
+    return acc
+  }
+
+  function digitPowerSum(x,n) {
+    var sum = 0
+    var digit
+     
+    do {
+      digit = x % 10
+      sum += power(digit,n)
+      x = (x - digit) / 10
+    } while (x > 0)
+
+    return sum
+  }
+  function isWaterFlower(x) {
+    var width = digitWidth(x)
+    var sum = digitPowerSum(x,width)
+
+    return sum === x
+  } 
+</script>
+<script id="narcissistics" sample-input="" sample-output="" comment="找出100到10000以内所有的水仙花数">
+  for (var j = 100;j <= 10000;j++) {
+    var a = String(j);
+    var b = a.length;
+    var x = 0;
+    for (var i = 0;i <= b;i++) {
+      x += Number(a.charAt(i))**b;
+    }
+    if (j == x) {
+      console.log(j);
+    }
+  }
+</script>
+<script id="palindrom" sample-input="12321" sample-output="YES" comment="判断一个非负整数是否为回文数字">
+  function isPalindrom(x) {
+    var width = digitWidth(x)
+    var c = Math.floor(width / 2)
+
+    for (var i = 0;i < c;i++) {
+      var r = parseInt(x / 10 ** i) % 10
+      var l = parseInt(x / 10 ** (width - i - 1)) % 10
+
+      if (r != l) {
+        return false
+      }
+    }
+
+    return true
+  }
+</script>
+<script id="weekday" sample-input="2018 6" sample-output="5" comment="输入年份与月份，给出该年该月的第一天是星期几">
+  // var year = +prompt('年')
+  // var month = +prompt('月')
+  // var day = 0;
+  // for (var i = 0;i < year;i++) {
+  //   if ((i % 100 == 0 && i % 400 == 0) ||(i % 100 != 0 && i % 4 == 0)) {
+  //     day += 366
+  //   } else {
+  //     day += 365
+  //   }
+  // }
+  // if ((year % 100 == 0 && year % 400 == 0) ||(year % 100 != 0 && year % 4 == 0)) {
+  //   switch(month) {
+  //     case 1:
+  //       day += 0
+  //       break
+  //     case 2:
+  //       day += 31
+  //       break
+  //     case 3:
+  //       day += 60
+  //       break
+  //     case 4:
+  //       day += 91
+  //       break
+  //     case 5:
+  //       day += 121
+  //       break
+  //     case 6:
+  //       day += 152
+  //       break
+  //     case 7:
+  //       day += 182
+  //       break
+  //     case 8:
+  //       day += 213
+  //       break
+  //     case 9:
+  //       day += 244
+  //       break
+  //     case 10：
+  //       day += 274
+  //       break
+  //     case 11：
+  //       day += 305
+  //       break
+  //     case 12 :
+  //       day += 335
+  //       break
+  //   }
+  // } else {
+  //   switch(month) {
+  //     case 1:
+  //       day += 0
+  //       break
+  //     case 2:
+  //       day += 31
+  //       break
+  //     case 3:
+  //       day += 59
+  //       break
+  //     case 4:
+  //       day += 90
+  //       break
+  //     case 5:
+  //       day += 120
+  //       break
+  //     case 6:
+  //       day += 151
+  //       break
+  //     case 7:
+  //       day += 181
+  //       break
+  //     case 8:
+  //       day += 212
+  //       break
+  //     case 9:
+  //       day += 243
+  //       break
+  //     case 10：
+  //       day += 273
+  //       break
+  //     case 11：
+  //       day += 304
+  //       break
+  //     case 12 :
+  //       day += 334
+  //       break
+  //   }
+  // }
+  // console.log(day % 7 - 2)
+  function isLeapYear(year) {
+    if (year % 4 != 0 ) {
+      return false
+    }
+    if (year % 100 != 0) {
+      return true
+    }
+    if (year % 400 != 0) {
+      return false
+    }
+    return true
+  }
+  function monthDay(year,month) {
+    if(month === 2) {
+      if (isLeapYear(year)) {
+        return 29
+      } else {
+        return 28
+      }
+    } else {
+      switch(month) { 
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        return 31
+      default:
+        return 30
+    } 
+    }
+  }
+  function weekday(year,month) {
+    var days = 365 * (year - 1) + Math.floor(year / 4) - Math.floor(year / 100) + Math.floor(year / 400)
+
+  //   for(var i = 1;i < year;i++) {
+  //     for(var j = 1;j <= 12;j++) {
+  //       days += monthDay(i,j)
+  //     }
+  //   }
+
+    for(var k =1;k < month;k++) {
+      days +=monthDay(year,k)
+    }
+    return (days + 1) % 7
+  }
+</script>
+<script id="complete-number" sample-input="6" sample-output="YES" comment="判断一个数是否为完全数">
+  var x = +prompt('完全数判断');
+  var s = 0;
+  for (var j = 1;j < x;j++) {
+    if (x % j == 0) {
+      s = s + j;
+    }
+  }
+  if (s == x) {
+    console.log('YES');
+  } else {
+    console.log('NO');
+  }
+</script>
+<script id="complete-numbers" sample-input="" sample-output="" comment="输出10000以内所有的完全数">
+  for (var x = 1;x <= 10000;i++) {
+    var s = 0;
+    for (var j = 1;j < x;j++) {
+      if (x % j == 0) {
+        s = s + j;
+      }
+    }
+    if (s == x) {
+      console.log('YES');
+    } else {
+      console.log('NO');
+    }   
+  }
+</script>
+<script id="prime" sample-input="7" sample-output="YES" comment="判断一个数是否为素数">
+  
+</script>
+<script id="primes" sample-input="" sample-output="" comment="输出100以内所有的素数">
+  
+</script>
+<script id="itob" sample-input="123" sample-output="123" comment="数字转换成字符串">
+  var n = +prompt('输入一串数字')
+  var x = ""
+  do {
+    var a = n % 10
+    x = String.fromCharCode(a + 48) + x
+    n = (n - a) / 10  
+  } while (n > 0)
+  console.log(x)
+</script>
+<script id="lcf&lcm" sample-input="12 9" sample-output="36 3" comment="给定两个数，求它们的最小公倍数和最大公约数">
+  var a = +prompt('第一个数');
+  var b = +prompt('第二个数');
+  var s = 0;
+  var v = Infinity;
+  for (var i = 1;i <= Math.min(a,b);i++) {
+    if (a % i == 0 && b % i == 0) {
+      s = Math.max(s,i);
+    }
+  }
+  console.log(s);
+  for (var j = 1;j <= a * b;j++) {
+    if (j % a == 0 && j % b == 0) {
+      v = Math.min(v,j);
+    }
+  }
+  console.log(v);
+</script>
+<script id="7" sample-input="" sample-output="" comment="敲7">
+//  for (var i = 1;i <= 100;i++) {
+//    if (String(i).charAt(0) === '7' || String(i).charAt(1) === '7' || String(i).charAt(2) === '7') {
+//      console.log(i);
+//    } else if (i % 7 == 0) {
+//      console.log(i);
+//    }
+//  }
+  for (var i = 1;i <= 100;i++) {
+    var n = i
+    knocked = false
+    if (n % 7 === 0) {
+      knocked = true
+    } else {
+      while ( n > 0) {
+        var s = n % 10
+        if (s === 7) {
+          knocked = true
+          break
+        }
+        n = (n - s) / 10
+      }
+    }
+    if (knocked == true) {
+      console.log(i+'knocked')
+    } else {
+      console.log(i)
+    }
+  }
+</script>
+<script id="sqrt" sample-input="2" sample-output="1.414" comment="不使用Math.sqrt，求一个非负数的平方根，至少精确到小数点后3位">
+// 二分法
+  var x = +prompt('平方根')
+  var small = 0
+  var max = 2
+  var a = (small + max) / 2
+  while (Math.abs(a*a - x) > 0.000000000000001) {
+    if (a*a > x) {
+      max = a
+    } else if (a*a < x) {
+      small = a 
+    }
+    a = (small + max) / 2
+  }
+  console.log(a)
+
+  //   for (var i = 1;i < x / 2;i += 0.001) {
+  //   if (Math.ceil(i ** 2) == x) {
+  //     console.log(i.toFixed(3));
+  //   }
+  // }
+  //   var n = +prompt('数字')
+  // var x = 2
+  // var count = 0
+  // while (x * x - n > 0.00000001) {
+  // count += 1
+  // x = x - (x * x - 2) / (2 * x)
+  // }
+  console.log(count);
+  console.log(x);
+</script>
+<script id="求s=a+aa+aaa+aaaa">
+  var a = +prompt('数字');
+  var b = +prompt('重复几次');
+  var s = 0;
+  var x = "";
+  for (var i = 1;i <= b;i++) {
+    x += String(a);
+    s = s + Number(x);
+  }
+  console.log(s);
+</script>
+<script id="9*9乘法表">
+  document.write('<table>')
+  for (var i = 1;i <= 9;i++) {
+    document.write('<tr>')
+    for (var j = 1;j <= i; j++) {
+      document.write('<td  style="border:1px solid">'+i + '*' + j + '=' + i*j + '</td>');
+    }
+    document.write('</tr>')
+  }
+  document.write('</table>')
+</script>
+ if (n1 > n2) {
+    m = n2
+    n2 = n1
+    n1 = m
+  }
+  if (n3 < n2 && n3 > n1) {
+    m = n3
+    n3 = n2
+    n2 = m
+  } else if (n3 < n1) {
+    m=n3
+    n3=n2
+    n2=m
+    m=n2
+    n2=n1
+    n1=m
+  }

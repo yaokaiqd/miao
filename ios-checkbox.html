@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width">
   <title>ios-checkbox</title>
   <style>
+  /*
+   *第一版  
+   *
+   *结合伪类实现不同状态下的active动画
     div{
       font-size:0;
       position:relative;
@@ -57,7 +61,50 @@
       width:66px;
       left:32px;
     }
-    /*结合伪类实现不同状态下的active动画*/
+  */  
+  /*
+   *
+   *第二版，利用伪元素代替span，但input *active状态仍使用了绝对定位，待改进
+   */
+    input{
+      display:none;
+    }
+    label{
+      display:inline-block;
+      width:200px;
+      height:100px;
+      background-color:#ddd;
+      border-radius:999px;
+      padding:10px;
+      position:relative;
+      transition: box-shadow 1s;
+      
+    }
+    label::before{
+      display:inline-block;
+      content:"";
+      width:100px;
+      height:100px;
+      border-radius:999px;
+      background-color:white;
+      position:absolute;
+      box-shadow:0 2px 10px #6669;
+      transition: margin-left .5s;
+    }
+    input[type="checkbox"]:checked +label::before{
+      margin-left:100px;
+    }
+    input[type="checkbox"]:checked +label{
+      box-shadow:0 0 2px 60px #6edc60 inset;
+    }
+    input[type="checkbox"]:active +label::before{
+      width:150px;
+      transition: width .5s .5s;
+    }
+    input[type="checkbox"]:checked:active +label::before{
+      width:150px;
+      right:10px;
+    }
   </style>
 </head>
 <body>

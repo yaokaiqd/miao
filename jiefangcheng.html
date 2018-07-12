@@ -14,20 +14,15 @@
     x1= (-b + Math.sqrt(d)) / 2 / a;
     x2= (-b - Math.sqrt(d)) / 2 / a;
     console.log("a"+"="+a,"b"+"="+b,"c"+"="+c,"x1"+"="+x1,"x2"+"="+x2);
-  }else if(d<0){
-    console.log(d,"a" + "=" + a,"b" + "=" + b,"c" + "=" + c,
-                  "x1" + "=" + (-b/(2*a)) + "+" + Math.sqrt(-d)/(2*a)+"i",
-                  "x2"+"="+ (-b/(2*a))+ "-" + Math.sqrt(-d)/(2*a)+"i");
-    // x1= -b / 2 * a;
-    // x2=x1;
-    // console.log("a"+"="+a,"b"+"="+b,"c"+"="+c,"x1"+"="+"x2"+"="+x1);
-  }else{
+  }else if(d==0){
+    //注意双等
     x1= -b / 2 * a;
     x2=x1;
     console.log("a"+"="+a,"b"+"="+b,"c"+"="+c,"x1"+"="+"x2"+"="+x1);
-    // console.log(d,"a" + "=" + a,"b" + "=" + b,"c" + "=" + c,
-    //               "x1" + "=" + (-b/(2*a)) + "+" + Math.sqrt(-d)/ (2 * a)  +"i",
-    //               "x2"+"="+ (-b/(2*a))+ "-" + Math.sqrt(-d)/(2*a) + "i");
+  }else{
+    console.log(d,"a" + "=" + a,"b" + "=" + b,"c" + "=" + c,
+                  "x1" + "=" + (-b/(2*a)) + "+" + Math.sqrt(-d)/ (2 * a)  +"i",
+                  "x2"+"="+ (-b/(2*a))+ "-" + Math.sqrt(-d)/(2*a) + "i");
   }
   // ----------------------------------------------------------------------------------
   var a1=Number(prompt("please input a1"));

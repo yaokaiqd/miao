@@ -1,0 +1,12 @@
+*{
+  margin:0;
+}
+.ft_fz{
+  font-size:0;
+}
+.ft_fz *{
+  font-size:32px;
+}
+.a *{
+  font-size:64px;
+}
